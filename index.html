@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="FinPilot AI is a responsive web dashboard for net worth, budgeting, tax planning, and portfolio visibility."
+    />
+    <title>FinPilot AI | Personal CFO for the Web</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#c5c6cd",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-tertiary-fixed": "#2a1700",
+              "secondary-fixed-dim": "#4edea3",
+              "inverse-primary": "#515f78",
+              "inverse-on-surface": "#2b303c",
+              "surface-variant": "#303541",
+              "on-primary": "#233148",
+              "surface-tint": "#b9c7e4",
+              "on-primary-container": "#74829d",
+              "outline-variant": "#44474d",
+              "inverse-surface": "#dee2f2",
+              "on-surface": "#dee2f2",
+              "error": "#ffb4ab",
+              "surface-bright": "#343946",
+              "background": "#0e131e",
+              "primary-fixed": "#d6e3ff",
+              "surface-container-low": "#171b27",
+              "on-background": "#dee2f2",
+              "tertiary-container": "#271500",
+              "on-tertiary": "#472a00",
+              "surface-container-high": "#252a36",
+              "secondary": "#4edea3",
+              "tertiary": "#ffb95f",
+              "on-secondary-container": "#00311f",
+              "on-secondary": "#003824",
+              "outline": "#8f9097",
+              "primary-container": "#0a192f",
+              "tertiary-fixed": "#ffddb8",
+              "on-tertiary-container": "#b67300",
+              "on-primary-fixed-variant": "#39475f",
+              "on-secondary-fixed-variant": "#005236",
+              "surface-container-lowest": "#090e19",
+              "secondary-fixed": "#6ffbbe",
+              "surface-container": "#1b1f2b",
+              "surface-container-highest": "#303541",
+              "surface-dim": "#0e131e",
+              "surface": "#0e131e",
+              "on-tertiary-fixed-variant": "#653e00",
+              "secondary-container": "#00a572",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "on-primary-fixed": "#0d1c32",
+              "primary-fixed-dim": "#b9c7e4",
+              "primary": "#b9c7e4",
+              "error-container": "#93000a",
+              "on-secondary-fixed": "#002113"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-morphism {
+        background: rgba(48, 53, 65, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .emerald-glow {
+        box-shadow: 0 0 20px rgba(78, 222, 163, 0.1);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary selection:text-on-secondary">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#0A192F] flex justify-between items-center px-6 h-16 w-full fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<span class="text-xl font-extrabold text-[#4EDE91] tracking-tighter">FinPilot AI</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-8 mr-8">
+<a class="text-[#4EDE91] font-['Manrope'] text-sm font-bold tracking-tight" href="#">Home</a>
+<a class="text-slate-400 hover:bg-white/5 transition-colors font-['Manrope'] text-sm font-bold tracking-tight" href="#">Plan</a>
+<a class="text-slate-400 hover:bg-white/5 transition-colors font-['Manrope'] text-sm font-bold tracking-tight" href="#">Ask AI</a>
+<a class="text-slate-400 hover:bg-white/5 transition-colors font-['Manrope'] text-sm font-bold tracking-tight" href="#">History</a>
+</div>
+<button class="material-symbols-outlined text-[#4EDE91] p-2 hover:bg-white/5 rounded-full transition-colors">notifications</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<img alt="User Profile" data-alt="close-up portrait of a professional indian male with a confident smile, soft office lighting, clean modern aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOJk88YqOIOlGd27LHHbXRFwAT8KayoDFUF8vu7xjFDRYkoVveGX5dh0zY_0X1FKeFQCXEY8KWcS-jvORbl7un_sanRDLoZWn_LxkVK9MLs3KXBn3_tDUZXyEiovdcULY62wpZjOV7AXTSLDvSiANQgM4ncmF2Wvv5vafvhGhTtUBnevjCkN1Bi9azO_z63FvjVON4UWUt7LHGn6zdACpE853O7ZZ8s-lKVY5HyBzZASJ3NRAyl5plfb1OhU1HRYHDTqqgBQ04PnA"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section: Total Net Worth -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<p class="font-label text-label-sm text-on-surface-variant uppercase tracking-[0.2em] mb-2">Total Net Worth</p>
+<h1 class="font-headline font-bold text-[3.5rem] leading-none tracking-tighter">
+<span class="text-[0.8em] text-primary opacity-80">₹</span>15,40,000
+                    </h1>
+<div class="flex items-center gap-2 mt-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold">
+<span class="material-symbols-outlined text-xs mr-1">trending_up</span>+12.4%
+                        </span>
+<span class="text-on-surface-variant text-xs">vs last month</span>
+</div>
+</div>
+<!-- Quick Actions: Bento Layout -->
+<div class="grid grid-cols-2 gap-3 w-full md:w-auto">
+<button class="bg-gradient-to-br from-secondary to-on-secondary-container text-on-secondary px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+                        Invest Now
+                    </button>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 border border-outline-variant/10 transition-all">
+<span class="material-symbols-outlined">description</span>
+                        File ITR
+                    </button>
+</div>
+</div>
+</section>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- AI Insights: Glassmorphism Card -->
+<div class="md:col-span-8 bg-surface-container-low rounded-2xl p-6 relative overflow-hidden emerald-glow">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h2 class="font-headline text-xl font-bold">AI Financial Command</h2>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">Updated 2m ago</span>
+</div>
+<div class="space-y-4">
+<!-- Guidance Item 1 -->
+<div class="group bg-surface-container p-4 rounded-xl border-l-4 border-secondary hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-secondary mb-1">Optimize Zomato Spends</h3>
+<p class="text-sm text-on-surface-variant">You've spent ₹8,400 on food delivery this month. Switching to 'Zomato Gold' could save you ₹1,200 annually.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Guidance Item 2 -->
+<div class="group bg-surface-container p-4 rounded-xl border-l-4 border-tertiary hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-bold text-tertiary mb-1">Tax Saving via ELSS</h3>
+<p class="text-sm text-on-surface-variant">₹45,000 remaining in Section 80C limit. Investing in Mirae Asset Tax Saver can save you ₹9,270 in taxes.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Dynamic SIP Progress -->
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mb-1">Monthly Investment</p>
+<p class="text-2xl font-bold">₹25,000 <span class="text-sm font-normal text-on-surface-variant">/ ₹30,000 Target</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs text-secondary font-bold">83% ACHIEVED</p>
+</div>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[83%] rounded-full shadow-[0_0_10px_rgba(78,222,163,0.3)]"></div>
+</div>
+</div>
+</div>
+<!-- Expense Breakdown: Sidebar Card -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Spend Categories -->
+<div class="bg-surface-container rounded-2xl p-6">
+<h2 class="font-headline text-lg font-bold mb-6">Monthly Spend</h2>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-[#FF4F17]/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#FF4F17]">restaurant</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold">Food &amp; Dining</span>
+<span class="text-sm font-bold">₹12,400</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full">
+<div class="h-full bg-[#FF4F17] w-[45%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">home</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold">Rent &amp; Utilities</span>
+<span class="text-sm font-bold">₹35,000</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full">
+<div class="h-full bg-primary w-[90%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">account_balance</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold">EMI &amp; Loans</span>
+<span class="text-sm font-bold">₹18,200</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full">
+<div class="h-full bg-tertiary w-[60%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 text-sm font-bold text-on-surface-variant hover:text-secondary transition-colors border border-outline-variant/20 rounded-xl">
+                        View All Categories
+                    </button>
+</div>
+<!-- Integration Hub -->
+<div class="bg-surface-container-low rounded-2xl p-5 border border-outline-variant/5">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-4">Connected Accounts</p>
+<div class="flex justify-between">
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-[#1B1F2B] flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+<img alt="UPI" class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI_-4t5pe53xos-wOXliWk8Iua9TJI6RPu1sgc8oG1pFM4NzYWvXNWfRTzZ5DS6Hu090wmJW-mwiDjQ5bXSQ6XVwkAIcXPfdVMJDkAf0paRgSljEDRwzAF_DMIsnk6y6PC3JVoakJpSI8Wq4X0rhu5v6m3Ww0_O_mp2AUhhnmDqPMMMrlvkld-egrK2WEvSHLHAxKLYkt1UA1f491ZXuJG4AF2uLKZF0dulawd-Ym4VDEzIIpZ_dYmi7QvAUOffQmChaetnpDfeUU"/>
+</div>
+<span class="text-[10px] font-bold opacity-60">UPI</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-[#1B1F2B] flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+<img alt="Zerodha" class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEof8wJHclGqy5mahmXUiRcNnH5438yMWBFE5HrE5IgywgBkuTSMH0bydw_0IspRHsKON8WBL2Aq92C6QusXbvcXbv-i_Fx9hePtBgqzglC67LFtI19-ZjpYlr7PBMPbpTTrdo7P5kKMNicRfHntiNGo0HOXsckc_rLzSMz9GnsW10zkR5bRGZwsbyMCFak41eZsqunIJUiX3ERVTqkg4BdbkFUhppeC0NXQ1kw5Miy5Cac7B7XisNv8LQ4vjyEhDdSqaNUVoUCHQ"/>
+</div>
+<span class="text-[10px] font-bold opacity-60">Zerodha</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-[#1B1F2B] flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+<img alt="Kuvera" class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJsxFe9hxxnSR279qq0nCxL1MU6YhQ_AEY3LE3dHDMSPp3UnBh-p7uLutoCf_v7LVM5QhFqezSehZ_LBggbHfZcqxowdr4UYUO2_nGEv532jjjoW7jZgsUUoGDCWoijjOhTKCcLbg1L9AXYqSBc8DeocHp4q8DRSIC6j2U2e3lB8kKhO8vcXH_jzu3jco83jzCKqiVnnuQGV19QMMImH4YXRecEnuxnY2AB5rWhK2BCgJxI8uMnlwdB0jQ1hen1rLRrqfD2t-3L8M"/>
+</div>
+<span class="text-[10px] font-bold opacity-60">Kuvera</span>
+</div>
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center border border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-xs">add</span>
+</div>
+<span class="text-[10px] font-bold opacity-60">Add</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Portfolio Visualization Section -->
+<section class="mt-12">
+<h2 class="font-headline text-2xl font-bold mb-8">Asset Allocation</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Mutual Funds -->
+<div class="bg-surface-container-high p-6 rounded-2xl relative overflow-hidden group hover:scale-[1.02] transition-transform">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-secondary">analytics</span>
+</div>
+<p class="font-label text-xs text-secondary font-bold mb-1">Mutual Funds (ELSS)</p>
+<p class="text-2xl font-bold mb-4">₹8,24,000</p>
+<div class="flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">4 Active SIPs</span>
+<span class="text-xs font-bold text-secondary">+18.2% p.a.</span>
+</div>
+</div>
+<!-- Direct Equity -->
+<div class="bg-surface-container-high p-6 rounded-2xl relative overflow-hidden group hover:scale-[1.02] transition-transform">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">show_chart</span>
+</div>
+<p class="font-label text-xs text-primary font-bold mb-1">Direct Equity</p>
+<p class="text-2xl font-bold mb-4">₹4,12,000</p>
+<div class="flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">12 Stocks</span>
+<span class="text-xs font-bold text-secondary">+24.5% p.a.</span>
+</div>
+</div>
+<!-- Savings/FD -->
+<div class="bg-surface-container-high p-6 rounded-2xl relative overflow-hidden group hover:scale-[1.02] transition-transform">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-tertiary">savings</span>
+</div>
+<p class="font-label text-xs text-tertiary font-bold mb-1">Liquid &amp; Fixed Deposits</p>
+<p class="text-2xl font-bold mb-4">₹3,04,000</p>
+<div class="flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">3 Accounts</span>
+<span class="text-xs font-bold text-on-surface-variant">~7.1% p.a.</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-4 pb-safe bg-[#0A192F]/95 backdrop-blur-md z-50">
+<a class="flex flex-col items-center justify-center text-[#4EDE91] bg-[#4EDE91]/10 rounded-xl px-4 py-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#4EDE91] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-widest mt-1">Plan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#4EDE91] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-widest mt-1">Ask AI</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-[#4EDE91] transition-all duration-200" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Manrope'] text-[10px] font-semibold uppercase tracking-widest mt-1">History</span>
+</a>
+</nav>
+<!-- Floating Action Button: AI Assistant -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-secondary text-on-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all z-40 emerald-glow">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+
+  </body>
+</html>
+
